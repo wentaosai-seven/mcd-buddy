@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>麦门搭子 · 拼单战报</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #fff7ec;
+    color: #2b2b2b;
+    display: flex;
+    justify-content: center;
+    padding: 24px 12px;
+  }
+  .card {
+    width: 380px;
+    background: #ffffff;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 18px 40px rgba(255, 170, 0, 0.25);
+    border: 2px solid #ffc936;
+  }
+  .head {
+    background: linear-gradient(135deg, #ff8a00, #ffc436);
+    padding: 22px 22px 18px;
+    color: #fff;
+  }
+  .head .tag { font-size: 12px; letter-spacing: 2px; opacity: .9; }
+  .head h1 { font-size: 24px; margin-top: 4px; font-weight: 800; }
+  .head .sub { font-size: 13px; margin-top: 6px; opacity: .95; }
+  .stats {
+    display: flex;
+    padding: 18px 14px;
+    gap: 8px;
+    border-bottom: 1px dashed #ffe3a3;
+  }
+  .stat { flex: 1; text-align: center; }
+  .stat .num { font-size: 22px; font-weight: 800; color: #e8590c; }
+  .stat .num small { font-size: 12px; font-weight: 600; }
+  .stat .lab { font-size: 11px; color: #8a8a8a; margin-top: 2px; }
+  .king {
+    margin: 16px 18px;
+    background: #fff3d6;
+    border-radius: 14px;
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .king .crown { font-size: 26px; }
+  .king .txt b { color: #e8590c; }
+  .king .txt div { font-size: 13px; color: #5a5a5a; margin-top: 2px; }
+  .list { padding: 4px 18px 8px; }
+  .row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 9px 0; border-bottom: 1px solid #f3f3f3; font-size: 14px;
+  }
+  .row .who { font-weight: 600; }
+  .row .who span { display: block; font-size: 11px; color: #9a9a9a; font-weight: 400; }
+  .row .pay { color: #e8590c; font-weight: 700; }
+  .row .pay s { color: #bbb; font-weight: 400; margin-right: 6px; font-size: 12px; }
+  .foot {
+    padding: 14px 18px 20px; text-align: center;
+  }
+  .foot .line { font-size: 14px; color: #2b2b2b; font-weight: 600; }
+  .foot .paytip { font-size: 11px; color: #9a9a9a; margin-top: 8px; }
+  .foot .btn {
+    display: inline-block; margin-top: 12px; background: #ff8a00; color: #fff;
+    padding: 9px 20px; border-radius: 999px; font-size: 13px; font-weight: 700;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="head">
+      <div class="tag">MCD BUDDY · 拼单战报</div>
+      <h1>周五摸鱼小分队</h1>
+      <div class="sub">4 人拼单 · 到店自取 · 用券 3 张</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="num">¥48.4</div><div class="lab">共省</div></div>
+      <div class="stat"><div class="num">28.8<small>%</small></div><div class="lab">节省率</div></div>
+      <div class="stat"><div class="num">¥29.9</div><div class="lab">人均</div></div>
+    </div>
+    <div class="king">
+      <div class="crown">👑</div>
+      <div class="txt">
+        <b>拼单之王：阿步</b>
+        <div>贡献了关键「买一送一」券，把人均拉到 29.9</div>
+      </div>
+    </div>
+    <div class="list">
+      <div class="row"><div class="who">阿步<span>巨无霸套餐 + 无糖可乐</span></div><div class="pay"><s>¥42</s>¥27.9</div></div>
+      <div class="row"><div class="who">老王<span>麦辣鸡腿堡套餐</span></div><div class="pay"><s>¥38</s>¥25.9</div></div>
+      <div class="row"><div class="who">小美<span>板烧鸡腿堡（单）</span></div><div class="pay"><s>¥26</s>¥19.9</div></div>
+      <div class="row"><div class="who">阿杰<span>薯条大份 + 派</span></div><div class="pay"><s>¥30</s>¥22.0</div></div>
+    </div>
+    <div class="foot">
+      <div class="line">「四个人，吃得比一个人还便宜。」</div>
+      <div class="paytip">付款在你手上 · 麦门搭子仅帮你建单</div>
+      <div class="btn">扫码去麦当劳付款 →</div>
+    </div>
+  </div>
+</body>
+</html>

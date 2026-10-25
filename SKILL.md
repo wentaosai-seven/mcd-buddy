@@ -16,8 +16,22 @@ description: 麦门搭子 —— 多人拼单决策官。当用户想在麦当�
 - **隐私。** 拉取的历史订单/账户数据仅用于本次拼单推理，不对外泄露、不写进可分享卡片的明细之外。
 
 ## 接入前提
-本 Skill 依赖已连接的 **麦当劳 MCP**（open.mcd.cn/mcp，手机号登录后在控制台激活领取 Token，于 WorkBuddy 连接器里以自定义 MCP 添加）。
-启动任何动作前，先确认 MCP 已连接；若未连接，停下来告诉用户怎么连，不要编造接口数据。
+本 Skill 依赖已连接的 **麦当劳 MCP**：
+- 真实服务地址：`https://mcp.mcd.cn`（Streamable HTTP，非 `open.mcd.cn/mcp` 网页平台）
+- 获取 Token：登录 `https://open.mcd.cn/mcp` → 右上角「控制台」→「激活」领取 MCP Token（绑定个人会员账号）
+- 在 WorkBuddy 中：专家 → 技能 → 连接器 → 自定义连接器 → 配置 MCP，填入：
+  ```json
+  {
+    "mcpServers": {
+      "mcd-mcp": {
+        "type": "streamablehttp",
+        "url": "https://mcp.mcd.cn",
+        "headers": { "Authorization": "Bearer 你的MCP_TOKEN" }
+      }
+    }
+  }
+  ```
+启动任何动作前，先确认 MCP 已连接（可用 `tools/list` 验证）；若未连接，停下来告诉用户怎么连，不要编造接口数据。
 
 ## 工作流程（五个阶段，每阶段做完停下等用户确认）
 > 原则：每阶段结束必须 STOP 等确认，不得连跑。用户提修改只改他说的地方。

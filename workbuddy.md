@@ -20,14 +20,20 @@
 - `sample-card.html`：脱敏 mock 的「拼单战报」分享卡片，展示内容生成优势
 - 本文件：开发过程记录
 
-## 待用户补齐的最后一英里
-- [ ] 提供麦当劳 MCP Token（open.mcd.cn/mcp 激活领取）
-- [ ] 推到公开 GitHub 仓库
-- [ ] 在 M-China/mcd-developer-innovation-challenge 开 Issue 报名
-- [ ] 拉 Star（概念自带的「叫朋友拼单」传播链在此发力）
+## 关键修正（开发中途发现）
+- **MCP 真实地址不是 `open.mcd.cn/mcp`**（那是网页平台），而是 **`https://mcp.mcd.cn`**（Streamable HTTP）。裸调 `open.mcd.cn/mcp` 会被 WAF 返回 405；改用 `mcp.mcd.cn` 后 `initialize` 成功，服务器 `mcd-mcp v1.0.0`，`tools/list` 返回 **35 个真实工具**。
+- **官方要求仓库必须含 `CONTEST_DECLARATION.md`（内容不可改）与 `MCP_INTEGRATION.md`**，初版漏了，已补齐（声明文件原样从官方仓库拉取）。
+- 报名 Issue 格式有严格校验（标题/正文间不可有换行、地址不可用 Markdown），已将 #1388 改为标准【参赛申请】格式。
+
+## 已完成的最后一英里（2026-10-25 当晚）
+- [x] 用户提供 GitHub 账号（wentaosai-seven）+ PAT，已建公开仓库 `wentaosai-seven/mcd-buddy` 并推送
+- [x] 用户提供麦当劳 MCP Token，已实测 `mcp.mcd.cn` 连通，`query-my-account` 等只读接口真实返回数据
+- [x] 在官方仓库开报名 Issue #1388（标准格式）
+- [x] 补齐 CONTEST_DECLARATION.md / MCP_INTEGRATION.md，修正接入地址
+- [ ] 拉 Star > 0（GitHub 不允许自星，需朋友/朋友圈助力，23:59 前进榜）
 
 ## 验证
-- [x] Skill 逻辑自洽、边界清晰
-- [x] 安装步骤可执行
-- [ ] 真实 MCP 联调（待 Token）
-- [ ] 真实建单→战报卡生成（待 Token + 确认）
+- [x] Skill 逻辑自洽、边界清晰（仅建单不付款）
+- [x] 安装步骤可执行（含 mcp.mcd.cn 配置）
+- [x] 真实 MCP 联调成功（tools/list 35 工具 + query-my-account 只读实测 200）
+- [ ] 真实建单→战报卡生成（需用户确认后再调用 create-order，本会话未自动下单）
